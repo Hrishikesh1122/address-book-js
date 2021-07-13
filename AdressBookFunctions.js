@@ -5,6 +5,7 @@
  * @Version 1.0
  */
 //POJO class for contact object
+let addressBook =[];
 class Contact{
    
     get firstName(){return this._firstName}
@@ -52,8 +53,8 @@ class Contact{
         let re = new RegExp('[0-9]{6,6}')
         let match = re.test(value)
         if(match){this._zip=value;}
-        else{alert("Invalid state name , enter again")
-        throw new Error("Invalid state name")}
+        else{alert("Invalid zip , enter again")
+        throw new Error("Invalid zip")}
     }
 
     get phone(){return this._phone}
@@ -61,8 +62,8 @@ class Contact{
         let re = new RegExp('[1-9][0-9][1-9]{10}')
         let match = re.test(value)
         if(match){this._phone=value;}
-        else{alert("Invalid state name , enter again")
-        throw new Error("Invalid state name")}
+        else{alert("Invalid phone number , enter again")
+        throw new Error("Invalid phone number")}
     }
 
     get email(){return this._email}
@@ -70,8 +71,8 @@ class Contact{
         let re = new RegExp('[a-z0-9.+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}')
         let match = re.test(value)
         if(match){this._email=value;}
-        else{alert("Invalid state name , enter again")
-        throw new Error("Invalid state name")}
+        else{alert("Invalid email; , enter again")
+        throw new Error("Invalid email id")}
     }
 
 }
@@ -97,6 +98,7 @@ function createContect(){
     contact.zip=zip;
     contact.phone=phone;
     contact.email=email;
-    console.log(contact)
+    addressBook.push(contact)
+    console.log(addressBook)
     alert("Contact Created !!")
 }
