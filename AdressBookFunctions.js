@@ -22,7 +22,7 @@ class Contact{
     set lastName(value){
         let re = new RegExp('[A-Z]+[a-z]{2,}')
         let match = re.test(value)
-        if(match){this._lasttName=value;}
+        if(match){this._lastName=value;}
         else{alert("Invalid last name , enter again")
         throw new Error("Invalid last name")}
 }
@@ -112,13 +112,31 @@ function createContect(){
 //Find by firstname
 function search(){
     let searchValue = document.getElementById("searchID").value
+    let check =false;
     console.log(searchValue)
     addressBook.forEach(element => {
         if(element.firstName==searchValue){
             document.write(element.toString())
-        }
-        else{
-            alert("Contact not found")
+            check =true
         }
     })
+    if(!check)alert("Contact not found")
+}
+
+//UC5 
+//Delete contact
+function deleteByName(){
+    let searchValue = document.getElementById("searchID").value
+    let check =false;
+    console.log(searchValue)
+    addressBook.forEach(element => {
+        if(element.firstName==searchValue){
+            let index = addressBook.indexOf(element)
+            addressBook.splice(index,1)
+            check =true
+            alert("Deleted successfully")
+        }
+    })
+    if(!check)alert("Contact not found")
+    console.log(addressBook.toString())
 }
