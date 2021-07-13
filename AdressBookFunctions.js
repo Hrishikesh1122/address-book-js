@@ -140,3 +140,9 @@ function deleteByName(){
     if(!check)alert("Contact not found")
     console.log(addressBook.toString())
 }
+
+//UC6 
+//Get size of addressbook
+function getSize(){
+    document.write("Number of contacts :"+addressBook.length)
+}
