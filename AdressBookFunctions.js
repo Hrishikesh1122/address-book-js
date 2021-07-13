@@ -75,6 +75,11 @@ class Contact{
         throw new Error("Invalid email id")}
     }
 
+    toString(){
+        return "FirstName: "+this.firstName+" ,LastName: "+this.lastName+" ,Address: "+this.address+" ,City: "+this.city+" ,State: "+this.state
+        +" ,Zip: "+this.zip+" ,Phone: "+this.phone+" ,Email: "+this.email;
+    }
+
 }
 
 //UC1
@@ -101,4 +106,19 @@ function createContect(){
     addressBook.push(contact)
     console.log(addressBook)
     alert("Contact Created !!")
+}
+
+//UC4 
+//Find by firstname
+function search(){
+    let searchValue = document.getElementById("searchID").value
+    console.log(searchValue)
+    addressBook.forEach(element => {
+        if(element.firstName==searchValue){
+            document.write(element.toString())
+        }
+        else{
+            alert("Contact not found")
+        }
+    })
 }
