@@ -6,38 +6,73 @@
  */
 //POJO class for contact object
 class Contact{
-    firstName;
-    lastName;
-    address;
-    city;
-    state;
-    zip;
-    phone;
-    email;
+   
+    get firstName(){return this._firstName}
+    set firstName(value){
+        let re = new RegExp('[A-Z]+[a-z]{2,}')
+        let match = re.test(value)
+        if(match){this._firstName=value;}
+        else{alert("Invalid first name , enter again")
+        throw new Error("Invalid first name")
+        }
+    }
+        
+    get lastName(){return this._lastName}
+    set lastName(value){
+        let re = new RegExp('[A-Z]+[a-z]{2,}')
+        let match = re.test(value)
+        if(match){this._lasttName=value;}
+        else{alert("Invalid last name , enter again")
+        throw new Error("Invalid last name")}
+}
 
-    get firstName(){return this.firstName}
-    set firstName(firstName){this.firstName=firstName}
+    get address(){return this._address}
+    set address(value){this._address=value}
 
-    get lastName(){return this.lastName}
-    set lastName(lastName){this.lastName=lastName}
+    get city(){return this._city}
+    set city(value){
+        let re = new RegExp('[A-Z]+[a-z]{2,}')
+        let match = re.test(value)
+        if(match){this._city=value;}
+        else{alert("Invalid city name , enter again")
+        throw new Error("Invalid city name")}
+    }
 
-    get address(){return this.address}
-    set address(address){this.address=address}
+    get state(){return this._state}
+    set state(value){
+        let re = new RegExp('[A-Z]+[a-z]{2,}')
+        let match = re.test(value)
+        if(match){this._state=value;}
+        else{alert("Invalid state name , enter again")
+        throw new Error("Invalid state name")}
+    }
 
-    get city(){return this.city}
-    set city(city){this.city=city}
+    get zip(){return this._zip}
+    set zip(value){
+        let re = new RegExp('[0-9]{6,6}')
+        let match = re.test(value)
+        if(match){this._zip=value;}
+        else{alert("Invalid state name , enter again")
+        throw new Error("Invalid state name")}
+    }
 
-    get state(){return this.state}
-    set state(state){this.state=state}
+    get phone(){return this._phone}
+    set phone(value){
+        let re = new RegExp('[1-9][0-9][1-9]{10}')
+        let match = re.test(value)
+        if(match){this._phone=value;}
+        else{alert("Invalid state name , enter again")
+        throw new Error("Invalid state name")}
+    }
 
-    get zip(){return this.zip}
-    set zip(zip){this.zip=zip}
-
-    get phone(){return this.phone}
-    set phone(phone){this.phone=phone}
-
-    get email(){return this.email}
-    set email(email){this.email=email}
+    get email(){return this._email}
+    set email(value){
+        let re = new RegExp('[a-z0-9.+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}')
+        let match = re.test(value)
+        if(match){this._email=value;}
+        else{alert("Invalid state name , enter again")
+        throw new Error("Invalid state name")}
+    }
 
 }
 
@@ -62,6 +97,6 @@ function createContect(){
     contact.zip=zip;
     contact.phone=phone;
     contact.email=email;
-
+    console.log(contact)
     alert("Contact Created !!")
 }
