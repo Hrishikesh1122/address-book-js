@@ -5,7 +5,6 @@
  * @Version 1.0
  */
 //POJO class for contact object
-let addressBook =[];
 class Contact{
    
     get firstName(){return this._firstName}
@@ -81,6 +80,10 @@ class Contact{
     }
 
 }
+
+//Addressbook array
+let addressBook =[];
+
 
 //UC1
 //This function when called by clicking button will create a contact
